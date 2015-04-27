@@ -1,24 +1,36 @@
 <?php
-function burg($length = 7) {
+function burg($length = 9) {
 
 	$str = "Yeah man forreal forreal totes ";
 
-	$f_contents = file_get_contents("yeahmanforrealforrealtotes.txt");
-	$burgs = explode("\n",$f_contents);
-	while ( $burgs[count($burgs)-1] === "" ) {
-		array_pop($burgs); //php always puts an empty line as the last entry in the array even if the file does not end in an empty line!!!
+	if ( $length > 0 ) {
+		$str .= "dawg ";
+		$length--;
 	}
-	shuffle($burgs);
-
-	if ( $length >= count($burgs) ) {
-		$length = 0;
+	if ( $length > 0 ) {
+		$str .= "supreme ";
+		$length--;
 	}
+	if ( $length > 0 ) {
 
-	for ( $i = 0; $i < $length; $i++ ) {
-		$str .= array_pop($burgs) . " ";
+		$f_contents = file_get_contents("yeahmanforrealforrealtotes.txt");
+		$burgs = explode("\n",$f_contents);
+		while ( $burgs[count($burgs)-1] === "" ) {
+			array_pop($burgs); //php always puts an empty line as the last entry in the array even if the file does not end in an empty line!!!
+		}
+		shuffle($burgs);
+	
+		if ( $length >= count($burgs) ) {
+			$length = 0;
+		}
+	
+		for ( $i = 0; $i < $length; $i++ ) {
+			$str .= array_pop($burgs) . " ";
+		}
+	
 	}
-
-	return $str;
+	
+	return trim($str);
 	
 }
 ?>
