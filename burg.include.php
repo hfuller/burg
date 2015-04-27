@@ -9,6 +9,11 @@ function burg($length = 7) {
 		array_pop($burgs); //php always puts an empty line as the last entry in the array even if the file does not end in an empty line!!!
 	}
 	shuffle($burgs);
+
+	if ( $length >= count($burgs) ) {
+		$length = 0;
+	}
+
 	for ( $i = 0; $i < $length; $i++ ) {
 		$str .= array_pop($burgs) . " ";
 	}

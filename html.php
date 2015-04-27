@@ -1,3 +1,1 @@
-<?php
-header("Location: .");
-
+<?php require_once("index.php");
