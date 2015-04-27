@@ -1,6 +1,6 @@
 <?php
 require_once("burg.include.php");
-if ( array_key_exists("length",$_REQUEST) ) {
+if ( array_key_exists("length",$_REQUEST) and strlen($_REQUEST["length"] > 0 ) ) {
 	$length = intval($_REQUEST["length"]);
 	$burg = burg($length);
 } else {
