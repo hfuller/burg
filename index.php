@@ -1,10 +1,14 @@
+<?php
+require_once("burg.include.php");
+$burg = burg();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Yeah man forreal forreal totes</title>
+		<title><?= $burg ?></title>
 	</head>
 	<body>
-		I haven't rewritten this yet.
+		<?= $burg ?>
 	</body>
 </html>
 
