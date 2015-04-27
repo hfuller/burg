@@ -1,5 +1,5 @@
 <?php
-function burg($length = 9) {
+function burg($length = 7) {
 
 	$str = "Yeah man forreal forreal totes ";
 
