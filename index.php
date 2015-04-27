@@ -5,6 +5,7 @@ if ( $length > 0 ) {
 	$burg = burg($length);
 } else {
 	$burg = burg();
+	$length = "";
 }
 ?>
 <!DOCTYPE html>
@@ -17,7 +18,7 @@ if ( $length > 0 ) {
 		<form>
 			<fieldset>
 				<label for="length">Length</label>
-				<input name="length" value="7">
+				<input name="length" value="<?= $length ?>">
 				<button type="submit">do it</button>
 			</fieldset>
 		</form>
